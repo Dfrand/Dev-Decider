@@ -1,0 +1,26 @@
+{
+  "name": "dev-decider",
+  "version": "1.0.0",
+  "description": "Dev survey app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dfrand/Dev-Decider.git"
+  },
+  "author": "Dfrand,Cmckinney,Ijensen,Khinkel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dfrand/Dev-Decider/issues"
+  },
+  "homepage": "https://github.com/Dfrand/Dev-Decider#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mysql": "^2.15.0",
+    "sequelize": "^4.37.2"
+  }
+}
