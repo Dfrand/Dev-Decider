@@ -1,0 +1,56 @@
+body {
+    background-color: teal;
+}
+
+
+/*nav bar section*/
+
+.nav-bar {
+    float: right;
+    padding-bottom: 15px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+
+/*question section*/
+
+.question-section {
+    text-align: center;
+}
+
+
+/*answer section*/
+
+.answer-section {
+    padding-left: 131px;
+    padding-right: 131px;
+    padding-top: 48px;
+}
+
+
+/*images for answers*/
+
+.img-radio {
+    width: 150px;
+    height: 150px;
+}
+
+.description {
+    padding-left: 25px;
+}
+
+.member-pic {
+    width: 500px;
+    height: 500px;
+}
+
+
+/*next button to go to next pg*/
+
+.next-button {
+    padding-left: 400px;
+}
