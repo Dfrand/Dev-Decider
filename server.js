@@ -14,9 +14,10 @@ app.use(bodyParser.urlencoded({ extended:false}));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + "/public"));
 
+require("./controllers/htmlRoutes.js")(app);
 require("./controllers/answerRoutes.js");
 require("./controllers/userRoutes.js");
-require("./controllers/htmlRoutes.js");
+
 
 db.sequelize.sync({force:true}).then(function(){
   app.listen(PORT, function() {
