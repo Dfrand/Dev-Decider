@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended:false}));
 // app.use(bodyParser.raw({type:'application/vnd.custom-type'}))
 // app.use(bodyParser.text({type:'text/html'}))
 app.use(bodyParser.json());
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/views"));
 
 require("./controllers/htmlRoutes.js")(app);
 require("./controllers/answerRoutes.js");
