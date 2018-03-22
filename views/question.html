@@ -9,98 +9,112 @@
     <!--bootstrap link-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <!--insert personal stylesheet-->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="./assets/javascript/test.js"></script>
+
 </head>
 
+
+
 <body>
-    <!--nav bar code w/ logo-->
-    <!--   <section class="nav-bar">
-        <ul>
-            <!--logo placed far right-->
-    <!-- <li><img src="assets/images/circle.png" class="logo"></li>
-        </ul>
-    </section>-->
 
+    <!--ID #'s for each team member-->
+    <!--derek = 1, chelsey = 2, kevin = 3, ida = 4-->
 
-    <!--question section-->
-    <!-- <div class="row">
-        <div class="col-md-12">
-            <section class="question-section">
-                <h1 class="questions">Question:What is your favorite dessert?
-                </h1>
-            </section>
-        </div>
-    </div>
-
-    <!--answer section-->
-    <!--<div class="row">
-        <div class="col-md-6">
-            <section class="answer-section">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/images/cake.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </section>
+    <!--question one-->
+    <form action=“” method=“”>
+        <div id="q1">
+            <h2>Choose your favorite subject:</h2>
+            <button name=“subject” type=“submit” class="options" value=“1”><img src="assets/images/pie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“2”><img src="assets/images/cake.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“3”><img src="assets/images/cookie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“4”><img src="assets/images/icecream.jpg" class="img-radio"></button>
         </div>
 
-
-        <div class="col-md-6">
-            <section class="answer-section">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/images/pie.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-
-    <!--answer section continued-->
-    <!-- <div class="row">
-        <div class="col-md-6">
-            <section class="answer-section">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/images/cookie.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </section>
+        <div id="q2">
+            <h2>Choose your favorite subject:</h2>
+            <button name=“subject” type=“submit” class="options" value=“1”><img src="assets/images/pie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“2”><img src="assets/images/cake.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“3”><img src="assets/images/cookie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“4”><img src="assets/images/icecream.jpg" class="img-radio"></button>
         </div>
 
-        <div class="col-md-6">
-            <section class="answer-section">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/images/icecream.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </section>
+        <div id="q3">
+            <h2>Choose your favorite subject:</h2>
+            <button name=“subject” type=“submit” class="options" value=“1”><img src="assets/images/pie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“2”><img src="assets/images/cake.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“3”><img src="assets/images/cookie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“4”><img src="assets/images/icecream.jpg" class="img-radio"></button>
         </div>
-    </div>
 
-    <br>
-
-    <div class="row">
-        <div class="col-md-12">
-            <section class="next-button">
-                <button type="button" class="btn btn-primary btn-lg">NEXT</button>
-
-            </section>
+        <div id="q4">
+            <h2>Choose your favorite subject:</h2>
+            <button name=“subject” type=“submit” class="options" value=“1”><img src="assets/images/pie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“2”><img src="assets/images/cake.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“3”><img src="assets/images/cookie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“4”><img src="assets/images/icecream.jpg" class="img-radio"></button>
         </div>
-    </div>-->
+
+        <div id="q5">
+            <h2>Choose your favorite subject:</h2>
+            <button name=“subject” type=“submit” class="options" value=“1”><img src="assets/images/pie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“2”><img src="assets/images/cake.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“3”><img src="assets/images/cookie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“4”><img src="assets/images/icecream.jpg" class="img-radio"></button>
+        </div>
+
+        <div id="q6">
+            <h2>Choose your favorite subject:</h2>
+            <button name=“subject” type=“submit” class="options" value=“1”><img src="assets/images/pie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“2”><img src="assets/images/cake.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“3”><img src="assets/images/cookie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“4”><img src="assets/images/icecream.jpg" class="img-radio"></button>
+        </div>
+
+        <div id="q7">
+            <h2>Choose your favorite subject:</h2>
+            <button name=“subject” type=“submit” class="options" value=“1”><img src="assets/images/pie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“2”><img src="assets/images/cake.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“3”><img src="assets/images/cookie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“4”><img src="assets/images/icecream.jpg" class="img-radio"></button>
+        </div>
+
+        <div id="q8">
+            <h2>Choose your favorite subject:</h2>
+            <button name=“subject” type=“submit” class="options" value=“1”><img src="assets/images/pie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“2”><img src="assets/images/cake.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“3”><img src="assets/images/cookie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“4”><img src="assets/images/icecream.jpg" class="img-radio"></button>
+        </div>
+
+        <div id="q9">
+            <h2>Choose your favorite subject:</h2>
+            <button name=“subject” type=“submit” class="options" value=“1”><img src="assets/images/pie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“2”><img src="assets/images/cake.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“3”><img src="assets/images/cookie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“4”><img src="assets/images/icecream.jpg" class="img-radio"></button>
+        </div>
+
+        <div id="q10">
+            <h2>Choose your favorite subject:</h2>
+            <button name=“subject” type=“submit” class="options" value=“1”><img src="assets/images/pie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“2”><img src="assets/images/cake.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“3”><img src="assets/images/cookie.jpg" class="img-radio"></button>
+            <button name=“subject” type=“submit” class="options" value=“4”><img src="assets/images/icecream.jpg" class="img-radio"></button>
+        </div>
+
+
+    </form>
 
 
 
 
 
-
-
-</body>
+    <button id="submit" type="button" class=" btn-primary btn-block" data-toggle="modal" data-target="#resultsModal">
+            Submit
+        </button>
 
 </html>
