@@ -4,9 +4,12 @@ var path = require("path");
 // var db = require("../models");
 
 module.exports = function(app) {
-app.get("/",function(req, res){
+app.get("/home",function(req, res){
     res.sendFile(path.join(__dirname, "../views/home.html"));
   });
+//   app.get('/', function(req, res) {
+// 	res.sendFile(path.join(__dirname, '/views', 'index.html'));
+// });
   app.get("/question",function(req,res){
     res.sendFile(path.join(__dirname, "../views/question.html"));
   });
