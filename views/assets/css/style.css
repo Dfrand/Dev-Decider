@@ -2,6 +2,7 @@ body {
     background-color: teal;
 }
 
+
 /*nav bar section*/
 
 .nav-bar {
@@ -14,11 +15,13 @@ body {
     height: 50px;
 }
 
+
 /*question section*/
 
 .question-section {
     text-align: center;
 }
+
 
 /*answer section*/
 
@@ -27,6 +30,7 @@ body {
     padding-right: 131px;
     padding-top: 48px;
 }
+
 
 /*images for answers*/
 
@@ -43,6 +47,7 @@ body {
     width: 500px;
     height: 500px;
 }
+
 
 /*next button to go to next pg*/
 
