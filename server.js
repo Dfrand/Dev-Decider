@@ -38,8 +38,8 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + "/views"));
 
 require("./controllers/htmlRoutes.js")(app);
-require("./controllers/answerRoutes.js");
-require("./controllers/userRoutes.js");
+require("./controllers/answerRoutes.js")(app);
+require("./controllers/userRoutes.js")(app);
 
 
 // var client = s3.createClient({
@@ -58,5 +58,3 @@ db.sequelize.sync({force:true}).then(function(){
     console.log("App listening on PORT: " + PORT);
   });
 });
-
-

@@ -1,1 +1,69 @@
-<!-- http://devdeciderimages.s3-localhost:8080-us-east-2.amazonaws.com -->
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="shortcut icon" type="image/png" href="assets/images/friendsFavicon.ico">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../assets/css/home.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/reset.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+  </head>
+
+  <body>
+    <!-- <div class="main">
+      <h3>Dev Decider</h3>
+
+
+        <div id="question"></div>
+        <div id="answers">
+          <div id="answerScore">
+          </div>
+          <ul id="answerList">
+          </ul>
+        </div>
+      </div>
+      
+      </div> -->
+      <div>
+        <button type="submit" class="start">Enter with deference.</button>
+      </div>
+
+      <script src="./assets/javascript/app.js"></script>
+      <script>
+      var url =window.location.search;
+      var UserId = parseInt(url.split("=")[1]);
+console.log("UserId :" +UserId);
+      $(".start").on("click", function(event) {
+        event.preventDefault();
+        var initialAnswer = {
+          answer_numeric:"",
+          UserId: UserId,
+        };
+        var currentURL = window.location.origin;
+        var userInfo="?UserId="+UserId;
+        console.log("userInfo : "+userInfo);
+            $.post("/api/answers"+userInfo, initialAnswer,function(info){
+                window.location="http://localhost:8080/questions?UserId="+info.id
+            });
+        });
+
+
+
+      </script>
+  </body>
+  </html>

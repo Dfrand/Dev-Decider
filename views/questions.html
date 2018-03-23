@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="shortcut icon" type="image/png" href="assets/images/friendsFavicon.ico">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/reset.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+  </head>
+
+  <body>
+    <div class="main">
+      <h3>Dev Decider</h3>
+
+
+        <div id="question"></div>
+        <div id="answers">
+          <div id="answerScore">
+          </div>
+          <ul id="answerList">
+          </ul>
+        </div>
+      </div>
+        <!-- <img class="buckingham" src = "./assets/images/queen.jpeg"> -->
+      </div>
+      <script>
+      var newGuess;
+      var url =window.location.search;
+      var UserId = parseInt(url.split("=")[1]);
+      var questions = [
+
+        {
+          "question":"How many children does Queen Elizabeth have?",
+          "guesses":["kevin","derek","ida","chelsey"],
+
+          "answer":["https://s3.us-east-2.amazonaws.com/devdeciderimages/DeciderLogo","https://s3.us-east-2.amazonaws.com/devdeciderimages/DeciderLogo","https://s3.us-east-2.amazonaws.com/devdeciderimages/DeciderLogo","https://s3.us-east-2.amazonaws.com/devdeciderimages/DeciderLogo"],
+          "giphyId":["3oFzmj7BeU70XMdW9O","n4uQI5M4lpWzm"]
+        },
+        // {
+        //   "question":"What year was Queen Elizabeth II crowned?",
+        //   "guesses":["1957","1960","1949","1953"],
+        //   "answer":"1953",
+        //   "giphyId":["gskzHEG5SWM3m","QNHsUgzeuVWsU"]
+        // },
+        // {
+        //   "question":"What was the Queen's role in WWII?",
+        //   "guesses":["Queen","mechanic","ambassador","medic"],
+        //   "answer":"mechanic",
+        //   "giphyId":["xULW8GDfJGgpptCb4s","2k4CSOMmoFZYc"]
+        // },
+        // {
+        //   "question":"Where does the Queen and her family live?",
+        //   "guesses":["Buckingham Palace","King's Landing","Windsor Castle","Winterfell"],
+        //   "answer":"Buckingham Palace",
+        //   "giphyId":["3o7528Oqfsq6cyyjHW","cv6XZnaAjV408"]
+        // },
+      ]; //question array
+      $(document).on("click",".button",function(e){
+        game.createObject(e);
+        console.log("working");
+        var answer = {
+          0:$(e.target).data("q"),
+          UserId: UserId,
+        };
+        console.log("answer :"+answer.UserId);
+          console.log("answer :"+answer.answer_numeric);
+        var currentURL = window.location.origin;
+        var userInfo="?UserId="+UserId;
+        var url="/api/answers"+userInfo;
+            $.ajax({
+              method:"PUT",
+              url:"/api/answers",
+              data:answer
+            });
+      });
+        var game ={
+          questions:questions,
+          currentQuestion:0,
+          renderQuestion: function(){
+            $("#question").html(questions[game.currentQuestion].question);
+            game.createButtons();
+          },
+            createButtons: function (){
+              for (var i = 0; i<questions[game.currentQuestion].guesses.length; i++){
+                console.log(questions[game.currentQuestion].guesses.length);
+                newGuess = $("<img>");
+                newGuess.addClass("button");
+                newGuess.addClass(currentQuestion);
+                newGuess.attr("data-q", questions[game.currentQuestion].guesses[i]);
+
+                newGuess.attr("src",questions[game.currentQuestion].answer[i]);
+
+                $("#answerList").append(newGuess);
+                // game.hoverButtons();
+              };
+          },
+          createObject: function(e){
+            var answer={
+              currentQuesion:
+            }
+
+            if ($(e.target).data("q") == "kevin"){
+
+
+          },
+          nextQuestion: function(){
+            $("#question").empty();
+
+
+            game.currentQuestion++;
+            game.renderQuestion();
+          },
+
+        };
+          game.renderQuestion();
+      </script>

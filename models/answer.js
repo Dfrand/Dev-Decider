@@ -1,6 +1,9 @@
 module.exports = function(sequelize, DataTypes){
   var Answer = sequelize.define("Answer", {
-    answer_numeric: DataTypes.STRING,
+    0: DataTypes.STRING,
+    1: DataTypes.STRING,
+  2: DataTypes.STRING,
+    3: DataTypes.STRING,
     createdAt: {
       type: DataTypes.DATE(),
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP()'),
