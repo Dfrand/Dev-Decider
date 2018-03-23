@@ -101,7 +101,7 @@
                 console.log(questions[game.currentQuestion].guesses.length);
                 newGuess = $("<img>");
                 newGuess.addClass("button");
-                newGuess.addClass(currentQuestion);
+            
                 newGuess.attr("data-q", questions[game.currentQuestion].guesses[i]);
 
                 newGuess.attr("src",questions[game.currentQuestion].answer[i]);
@@ -110,22 +110,19 @@
                 // game.hoverButtons();
               };
           },
-          createObject: function(e){
-            var answer={
-              currentQuesion:
-            }
-
-            if ($(e.target).data("q") == "kevin"){
-
-
-          },
-          nextQuestion: function(){
-            $("#question").empty();
-
-
-            game.currentQuestion++;
-            game.renderQuestion();
-          },
+          // createKevin: function(e){
+          //
+          //   if ($(e.target).data("q") == "kevin"){
+          //
+          //
+          // },
+          // nextQuestion: function(){
+          //   $("#question").empty();
+          //
+          //
+          //   game.currentQuestion++;
+          //   game.renderQuestion();
+          // },
 
         };
           game.renderQuestion();
