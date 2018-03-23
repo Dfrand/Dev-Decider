@@ -4,13 +4,19 @@ var path = require("path");
 // var db = require("../models");
 
 module.exports = function(app) {
-app.get("/home",function(req, res){
-    res.sendFile(path.join(__dirname, "../views/home.html"));
-  });
+// app.get("/",function(req, res){
+//     res.sendFile(path.join(__dirname, "../views/index.html"));
+//   });
+  app.get("/home",function(req, res){
+      res.sendFile(path.join(__dirname, "../views/home.html"));
+    });
 //   app.get('/', function(req, res) {
 // 	res.sendFile(path.join(__dirname, '/views', 'index.html'));
 // });
-  app.get("/question",function(req,res){
-    res.sendFile(path.join(__dirname, "../views/question.html"));
+app.get("/answers",function(req, res){
+    res.sendFile(path.join(__dirname, "../views/index.html"));
+  });
+  app.get("/questions",function(req,res){
+    res.sendFile(path.join(__dirname, "../views/questions.html"));
   });
 }

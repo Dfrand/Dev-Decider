@@ -8,6 +8,9 @@
     <title>Dev</>Decider</title>
     <link rel="shortcut icon" type="image/png" href="assets/images/friendsFavicon.ico">
     <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../assets/css/home.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/reset.css">
     <!-- Bootstrap -->
@@ -15,6 +18,9 @@
         crossorigin="anonymous">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 </head>
 
 <body style="background-color:powderblue;">
@@ -43,7 +49,7 @@
                       </div>
                     </div>
 
-                    <button type="button" class="btn btn-success name-submit-button">go to survey</button>
+                    <button type="submit" id="submit" class="btn btn-success name-submit-button">go to survey</button>
 
                   </form>
 
@@ -71,6 +77,24 @@
             </p>
         </div>
     </footer>
+    <script type="text/javascript">
+    $("#submit").on("click", function(event) {
+      event.preventDefault();
+      var userData = {
+        name: $("#inputName").val(),
+        link: $("#inputLinkedin").val(),
+      };
+      console.log(userData);
+    var currentURL = window.location.origin;
+    $.post(currentURL + "/api/user", userData, function(data) {
+      console.log("data : "+data.photo);
+      console.log("data : "+data.name);
+      console.log("data : "+data.id);
+    }).done(function(info){
+          window.location="http://localhost:8080/answers?UserId="+info.id;
+    })
+  });
+    </script>
 </body>
 
 </html>
