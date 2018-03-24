@@ -11,6 +11,19 @@
         crossorigin="anonymous">
     <!--personal stylesheet-->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="../assets/css/home.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/reset.css"> -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 </head>
 
 <body>
@@ -29,8 +42,8 @@
         <div class="col-md-6">
             <section class="description">
                 <h1>You got Ida!</h1>
-                <h2>You enjoy long walks on the beach, and listening to the radio. You wish summer would never end, and that
-                    ice cream became a required side for every meal.</h2>
+                <button class = "ida">Find out about Ida</button>
+
             </section>
         </div>
 
@@ -49,7 +62,19 @@
         </div>
     </div>
 
+<script>
+function getAnswerData(id) {
+  $.get("/api/answers/" + id, function(data) {
+    if(data){
+      console.log("working");
+    }
+  });
+}
+$(".ida").on("click",function(){
+  getAnswerData(1);
+});
 
+</script>
 
 
 

@@ -12,7 +12,7 @@ module.exports = function(app) {
   app.get("/api/answers/:id", function(req, res) {
     db.Answer.findOne({
       where: {
-        id: req.params.id
+        id: req.body.id
       }
     })
     .then(function(dbAnswer) {

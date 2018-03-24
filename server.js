@@ -25,7 +25,7 @@ var app = express();
 
 app.use(fileUpload());
 
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3306;
 
 
 var db = require("./models");
@@ -39,7 +39,7 @@ app.use(express.static(__dirname + "/views"));
 
 require("./controllers/htmlRoutes.js")(app);
 require("./controllers/answerRoutes.js")(app);
-require("./controllers/userRoutes.js")(app);
+// require("./controllers/userRoutes.js")(app);
 
 
 // var client = s3.createClient({
