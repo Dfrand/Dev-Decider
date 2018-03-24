@@ -11,6 +11,19 @@
         crossorigin="anonymous">
     <!--personal stylesheet-->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="../assets/css/home.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/reset.css"> -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 </head>
 
 <body>
@@ -29,27 +42,65 @@
         <div class="col-md-6">
             <section class="description">
                 <h1>You got Ida!</h1>
-                <h2>You enjoy long walks on the beach, and listening to the radio. You wish summer would never end, and that
-                    ice cream became a required side for every meal.</h2>
+                <button class = "ida">Find out about Ida</button>
+                <div class="idaInfo"></div>
+
             </section>
         </div>
 
-        <div class="col-md-6">
-            <img src="assets/images/female.jpg" class="member-pic">
+        <div class="col-md-6 results">
+            <!-- <img src="assets/images/female.jpg" class="member-pic"> -->
+            <button class="resultsButton">Which Dev Are you like?</button>
         </div>
     </div>
 
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-12">
             <section class="next-button">
                 <button type="button" class="btn btn-primary btn-lg">RESTART</button>
 
             </section>
         </div>
-    </div>
+    </div> -->
 
+<script>
+// function getAnswerData(id) {
+//   $.get("/api/answers/" + id, function(data) {
+//     console.log(data);
+//   });
+// }
+$(".ida").on("click",function(data){
+  // getAnswerData(1);
+  $.get("/api/answers/" + 1, function(data) {
+    console.log(data);
+  var idaCrap = $("<div>");
+  idaCrap.text(data.name);
+  // idaCrap.text(data.dessert);
+  // idaCrap.text(data.food);
+  // idaCrap.text(data.snack);
+  $(".idaInfo").append(idaCrap);
+});
+});
+$(".resultsButton").on("click",function(){
+  $.get("/api/answers/",function(data){
+    console.log(data);
+    for (var i=0; i<data.length; i++){
+        var devInfo =$("<div>");
+        devInfo.text(data[i].name);
+        $(".results").append(devInfo);
 
+  };
+});
+});
+// function getParticipants(data){
+//   for (var i=0; data.length; i++){
+//     var devInfo =$("<div>");
+//     devInfo.text(data.name);
+//     $(".results").append(devInfo);
+//   };
+// };
+</script>
 
 
 

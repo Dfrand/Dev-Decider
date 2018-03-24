@@ -4,7 +4,8 @@ var db = require("../models");
 
 module.exports = function(app) {
   app.get("/api/answers/", function(req, res) {
-    db.Answer.findAll({})
+    db.Answer.findAll({
+    })
     .then(function(dbAnswer) {
       res.json(dbAnswer);
     });
