@@ -4,7 +4,8 @@ var db = require("../models");
 
 module.exports = function(app) {
   app.get("/api/answers/", function(req, res) {
-    db.Answer.findAll({})
+    db.Answer.findAll({
+    })
     .then(function(dbAnswer) {
       res.json(dbAnswer);
     });
@@ -12,7 +13,7 @@ module.exports = function(app) {
   app.get("/api/answers/:id", function(req, res) {
     db.Answer.findOne({
       where: {
-        id: req.body.id
+        id: req.params.id
       }
     })
     .then(function(dbAnswer) {

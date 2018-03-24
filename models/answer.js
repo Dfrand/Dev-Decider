@@ -1,5 +1,10 @@
 module.exports = function(sequelize, DataTypes){
   var Answer = sequelize.define("Answer", {
+    // id:{
+    //   type:DataTypes.INTEGER,
+    //   primaryKey:true,
+    //   autoIncrement:true
+    // },
 name: DataTypes.STRING,
 dessert: DataTypes.STRING,
 food: DataTypes.STRING,

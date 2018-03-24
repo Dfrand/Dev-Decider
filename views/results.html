@@ -43,37 +43,63 @@
             <section class="description">
                 <h1>You got Ida!</h1>
                 <button class = "ida">Find out about Ida</button>
+                <div class="idaInfo"></div>
 
             </section>
         </div>
 
-        <div class="col-md-6">
-            <img src="assets/images/female.jpg" class="member-pic">
+        <div class="col-md-6 results">
+            <!-- <img src="assets/images/female.jpg" class="member-pic"> -->
+            <button class="resultsButton">Which Dev Are you like?</button>
         </div>
     </div>
 
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-12">
             <section class="next-button">
                 <button type="button" class="btn btn-primary btn-lg">RESTART</button>
 
             </section>
         </div>
-    </div>
+    </div> -->
 
 <script>
-function getAnswerData(id) {
-  $.get("/api/answers/" + id, function(data) {
-    if(data){
-      console.log("working");
-    }
-  });
-}
-$(".ida").on("click",function(){
-  getAnswerData(1);
+// function getAnswerData(id) {
+//   $.get("/api/answers/" + id, function(data) {
+//     console.log(data);
+//   });
+// }
+$(".ida").on("click",function(data){
+  // getAnswerData(1);
+  $.get("/api/answers/" + 1, function(data) {
+    console.log(data);
+  var idaCrap = $("<div>");
+  idaCrap.text(data.name);
+  // idaCrap.text(data.dessert);
+  // idaCrap.text(data.food);
+  // idaCrap.text(data.snack);
+  $(".idaInfo").append(idaCrap);
 });
+});
+$(".resultsButton").on("click",function(){
+  $.get("/api/answers/",function(data){
+    console.log(data);
+    for (var i=0; i<data.length; i++){
+        var devInfo =$("<div>");
+        devInfo.text(data[i].name);
+        $(".results").append(devInfo);
 
+  };
+});
+});
+// function getParticipants(data){
+//   for (var i=0; data.length; i++){
+//     var devInfo =$("<div>");
+//     devInfo.text(data.name);
+//     $(".results").append(devInfo);
+//   };
+// };
 </script>
 
 
