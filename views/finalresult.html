@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dev Decider Result</title>
+    <link rel="shortcut icon" type="image/png" href="assets/images/friendsFavicon.ico">
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!--personal stylesheet-->
+    <link rel="stylesheet" href="assets/css/resultstyle.css">
+</head>
+
+<body style="background-color:#E4FFBF;">
+    <!--nav bar code w/ logo-->
+    <section class="nav-bar">
+        <!--logo placed far right-->
+        <img src="assets/images/DeciderLogo_SM.jpg" class="logoSM">
+    </section>
+
+    <!--list items are holding links for on-page anchors-->
+    <div class="row">
+        <ul>
+            <li>
+                <a href="#chelsey">Chelsey</a>
+            </li>
+            <li>
+                <a href="#derek">Derek</a>
+            </li>
+            <li>
+                <a href="#kevin">Kevin</a>
+            </li>
+            <li>
+                <a href="#ida">Ida</a>
+            </li>
+        </ul>
+    </div>
+    <div class="row col-md-12">
+        <!-- <div id="selectContainer" class="next-button"> -->
+          <select id="selectContainer"></select>
+          <!-- </div> -->
+            <button id="resultsButton"type="button" class="btn btn-success btn-lg">Find Other Devs</button>
+
+    </div>
+
+    <!--chelsey avatar-->
+    <div class="row">
+        <div class="col-md-6">
+            <a name="chelsey"></a>
+            <section class="description">
+                <h1 class=>You got Chelsey!</h1>
+                <h2>You love the outdoors, bicycling and going to concerts. Somewhat of a risk taker, one day, you would like to try skydiving.</h2>
+            </section>
+        </div>
+
+        <div class="col-md-6">
+            <img src="assets/images/AvatarChelsey.png" class="member-pic">
+        </div>
+    </div>
+
+
+
+    <div class="row col-md-12">
+        <section class="next-button">
+            <button type="button" class="btn btn-success btn-lg">RESTART</button>
+        </section>
+    </div>
+
+    <!--derek avatar-->
+    <div class="row">
+        <div class="col-md-6">
+            <a name="derek"></a>
+            <section class="description">
+                <h1 class>You got Derek!</h1>
+                <h2>You have an affinity for watching movies and love pop culture. You're favorite food is watermelon and favorite color is yellow.</h2>
+            </section>
+        </div>
+
+        <div class="col-md-6">
+            <img src="assets/images/AvatarDerek.png" class="member-pic">
+        </div>
+    </div>
+
+    <div class="row col-md-12">
+        <section class="next-button">
+            <button type="button" class="btn btn-success btn-lg">RESTART</button>
+        </section>
+    </div>
+</body>
+
+
+<!--kevin avatar-->
+<div class="row">
+    <div class="col-md-6">
+        <a name="kevin"></a>
+
+        <section class="description">
+            <h1>You got Kevin!</h1>
+            <h2>You enjoy rollerblading, likes both cats and dogs as well as eating cheeseburgers. Technology is also a favorite.</h2>
+        </section>
+    </div>
+
+    <div class="col-md-6">
+        <img src="assets/images/AvatarKevin.png" class="member-pic">
+    </div>
+</div>
+
+<div class="row col-md-12">
+    <section class="next-button">
+        <button type="button" class="btn btn-success btn-lg">RESTART</button>
+    </section>
+</div>
+
+
+<!--ida avatar-->
+<div class="row">
+    <div class="col-md-6">
+        <a name="ida"></a>
+
+        <section class="idaDescription">
+            <h1>You got Ida!</h1>
+            <h2>You enjoy long walks on the beach, and listening to the radio. You wish summer would never end, and that ice cream became a required side for every meal.</h2>
+        </section>
+        <section class="idaDataBase">
+        </section>
+    </div>
+
+    <div class="col-md-6">
+        <img src="assets/images/AvatarIda.png" class="member-pic">
+    </div>
+</div>
+
+<div class="row col-md-12" id="idaInfo">
+    <section class="next-button">
+        <button type="button" id="ida"class="btn btn-success btn-lg">Ida's Survey Answers</button>
+    </section>
+</div>
+<script>
+$("#selectContainer").hide();
+// function getAnswerData(id) {
+//   $.get("/api/answers/" + id, function(data) {
+//     console.log(data);
+//   });
+// }
+$("#ida").on("click",function(data){
+  // getAnswerData(1);
+  $(".idaDescription").hide();
+  $.get("/api/answers/" + 1, function(data) {
+    console.log(data);
+  // var idaName= $("<div>");
+  var idaDessert= $("<div>");
+  var idaFood= $("<div>");
+  var idaSnack= $("<div>");
+  // idaName.text(data.name);
+  idaDessert.text("Favorite Dessert :" +data.dessert);
+  idaFood.text("Favorite Food :" + data.food);
+  idaSnack.text("Favorite Snack :" +data.snack);
+  $(".idaDataBase").append(idaDessert,idaFood, idaSnack);
+});
+});
+$("#resultsButton").on("click",function(){
+  $("#selectContainer").show();
+  $("#resultsButton").hide();
+  $.get("/api/answers/",function(data){
+    console.log(data);
+    for (var i=0; i<data.length; i++){
+        var devInfo =$("<option>");
+        devInfo.attr("value",data[i].name);
+        devInfo.text(data[i].name);
+        $("#selectContainer").append(devInfo);
+
+  };
+});
+});
+// function getParticipants(data){
+//   for (var i=0; data.length; i++){
+//     var devInfo =$("<div>");
+//     devInfo.text(data.name);
+//     $(".results").append(devInfo);
+//   };
+// };
+</script>
+</body>
+</html>

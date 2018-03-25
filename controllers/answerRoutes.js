@@ -4,7 +4,8 @@ var db = require("../models");
 
 module.exports = function(app) {
   app.get("/api/answers/", function(req, res) {
-    db.Answer.findAll({})
+    db.Answer.findAll({
+    })
     .then(function(dbAnswer) {
       res.json(dbAnswer);
     });
@@ -24,16 +25,16 @@ app.post("/api/answers",function(req,res){
     res.json(dbAnswer);
   });
 });
-app.put("/api/answers", function(req, res) {
-  db.Answer.update({
-    answer_numeric0:req.body.answer_numeric0},
-{
-      where: {
-        id: req.body.UserId
-      }
-
-    }).then(function(dbAnswer) {
-      res.json(dbAnswer);
-    });
-});
+// app.put("/api/answers", function(req, res) {
+//   db.Answer.update({
+//     answer_numeric0:req.body.answer_numeric0},
+// {
+//       where: {
+//         id: req.body.UserId
+//       }
+//
+//     }).then(function(dbAnswer) {
+//       res.json(dbAnswer);
+//     });
+// });
 };
