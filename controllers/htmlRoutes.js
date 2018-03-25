@@ -18,6 +18,6 @@ app.get("/survey",function(req, res){
   res.sendFile(path.join(__dirname, "../views/survey.html"));
   });
   app.get("/results",function(req,res){
-    res.sendFile(path.join(__dirname, "../views/results.html"));
+    res.sendFile(path.join(__dirname, "../views/finalresults.html"));
   });
 };
