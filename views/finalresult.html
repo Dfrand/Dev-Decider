@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dev Decider Result</title>
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <!--personal stylesheet-->
     <link rel="stylesheet" href="assets/css/resultstyle.css">
@@ -34,6 +37,13 @@
                 <a href="#ida">Ida</a>
             </li>
         </ul>
+    </div>
+    <div class="row col-md-12">
+        <!-- <div id="selectContainer" class="next-button"> -->
+          <select id="selectContainer"></select>
+          <!-- </div> -->
+            <button id="resultsButton"type="button" class="btn btn-success btn-lg">Find Other Devs</button>
+
     </div>
 
     <!--chelsey avatar-->
@@ -110,9 +120,11 @@
     <div class="col-md-6">
         <a name="ida"></a>
 
-        <section class="description">
+        <section class="idaDescription">
             <h1>You got Ida!</h1>
             <h2>You enjoy long walks on the beach, and listening to the radio. You wish summer would never end, and that ice cream became a required side for every meal.</h2>
+        </section>
+        <section class="idaDataBase">
         </section>
     </div>
 
@@ -121,11 +133,55 @@
     </div>
 </div>
 
-<div class="row col-md-12">
+<div class="row col-md-12" id="idaInfo">
     <section class="next-button">
-        <button type="button" class="btn btn-success btn-lg">RESTART</button>
+        <button type="button" id="ida"class="btn btn-success btn-lg">Ida's Survey Answers</button>
     </section>
 </div>
+<script>
+$("#selectContainer").hide();
+// function getAnswerData(id) {
+//   $.get("/api/answers/" + id, function(data) {
+//     console.log(data);
+//   });
+// }
+$("#ida").on("click",function(data){
+  // getAnswerData(1);
+  $(".idaDescription").hide();
+  $.get("/api/answers/" + 1, function(data) {
+    console.log(data);
+  // var idaName= $("<div>");
+  var idaDessert= $("<div>");
+  var idaFood= $("<div>");
+  var idaSnack= $("<div>");
+  // idaName.text(data.name);
+  idaDessert.text("Favorite Dessert :" +data.dessert);
+  idaFood.text("Favorite Food :" + data.food);
+  idaSnack.text("Favorite Snack :" +data.snack);
+  $(".idaDataBase").append(idaDessert,idaFood, idaSnack);
+});
+});
+$("#resultsButton").on("click",function(){
+  $("#selectContainer").show();
+  $("#resultsButton").hide();
+  $.get("/api/answers/",function(data){
+    console.log(data);
+    for (var i=0; i<data.length; i++){
+        var devInfo =$("<option>");
+        devInfo.attr("value",data[i].name);
+        devInfo.text(data[i].name);
+        $("#selectContainer").append(devInfo);
 
-
+  };
+});
+});
+// function getParticipants(data){
+//   for (var i=0; data.length; i++){
+//     var devInfo =$("<div>");
+//     devInfo.text(data.name);
+//     $(".results").append(devInfo);
+//   };
+// };
+</script>
+</body>
 </html>
