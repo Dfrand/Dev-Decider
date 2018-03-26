@@ -39,7 +39,7 @@ app.use(express.static(__dirname + "/views"));
 
 require("./controllers/htmlRoutes.js")(app);
 require("./controllers/answerRoutes.js")(app);
-// require("./controllers/userRoutes.js")(app);
+require("./controllers/devsRoutes.js")(app);
 
 
 // var client = s3.createClient({
