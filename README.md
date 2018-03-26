@@ -13,12 +13,16 @@ A fun quiz style application that will pair you with one of the apps Developers.
 ***
 ## Technologies Used:
 
- * Node.js
- * Express.js
- * MySQL
- * Sequelize
- * HTML5
+ * AWS
  * CSS3
+ * Express.js
+ * HTML5
+ * Lodash
+ * MySQL
+ * Node.js
+ * Sequelize
+ * Typeform
+ * Zapier
 
 ***
 ##  Installs
@@ -29,17 +33,23 @@ A fun quiz style application that will pair you with one of the apps Developers.
 ### Express
  - `npm install express`
 
+### Express-fileupload
+ - `npm install express-fileupload`
+
 ### MySQL
  - `npm install mysql`
 
 ### MySQL2
  - `npm install mysql2`
 
+### AWS S3
+ - `npm install s3`
+
 ### Sequelize
  - `npm install sequelize`
 ***
 ## Heroku
-You can try it out now at [Dev-Decider](https://#/).
+You can try it out now at [Dev-Decider](https://morning-coast-22139.herokuapp.com/).
 
 ***
 ## Contributors: 
