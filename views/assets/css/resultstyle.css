@@ -2,7 +2,9 @@ body {
     background-color: teal;
     height: 100%;
 }
-
+#derekDiv {
+    background-color: teal;
+}
 body#body {
     display: flex;
     flex-direction: column;
@@ -29,10 +31,20 @@ body#body {
     border: green;
     background-color: #449d44;
     margin: 5%;
+    opacity: .75;
+}
+
+.surveyBtn {
+    margin-top: 2%;
+}
+
+button {
+   background-color: #449d44;
 }
 
 #bottomAvatar {
-    margin-bottom: 4%;
+    margin-bottom: 18%;
+    background-color: teal;
 }
 
 a {
