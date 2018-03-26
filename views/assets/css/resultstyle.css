@@ -1,25 +1,55 @@
 body {
     background-color: teal;
+    height: 100%;
+}
+
+body#body {
+    display: flex;
+    flex-direction: column;
 }
 
 /*nav bar section*/
-
-.nav-bar {
+#pageLinks {
     float: right;
-    padding-bottom: 15px;
+    margin-right: 25%;
 }
 
-#logoBG {
-    padding-top: 24px;
+#navLogo {
+    float: right;
+    margin: 5%;
 }
 
+#sideBar {
+    margin-left: 88.75%;
+}
+
+.anchorBtn {
+    height: 2em;
+    width: 6em;
+    border: green;
+    background-color: #449d44;
+    margin: 5%;
+}
+
+#bottomAvatar {
+    margin-bottom: 4%;
+}
+
+a {
+    color: #fff;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+}
 
 .logoSM {
     width: 150px;
     height: 71.5px;
-    margin-top: 48px;
-    margin-right: 24px;
-    margin-left: 24px;
 }
 
 /*question section*/
@@ -55,10 +85,26 @@ body {
     margin-bottom: 20px;
 }
 
-/*next button to go to next pg*/
-
 .next-button {
     padding-left: 24px;
     padding-bottom: 24px;
 }
 
+/* footer */
+
+.container {
+    flex: 1 0 auto;
+}
+
+footer.footer {
+    background-color: #449d44;
+    color: #fff;
+    flex-shrink: 0;
+    padding: 1%;
+    text-align: center;
+    width: 100%;
+}
+
+.footer a:hover {
+    color: teal;
+}
