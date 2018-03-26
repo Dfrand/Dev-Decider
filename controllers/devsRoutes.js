@@ -3,11 +3,11 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  app.get("/api/answers/", function(req, res) {
-    db.Answer.findAll({
+  app.get("/api/devs/", function(req, res) {
+    db.Devs.findAll({
     })
-    .then(function(dbAnswer) {
-      res.json(dbAnswer);
+    .then(function(dbDevs) {
+      res.json(dbDevs);
     });
   });
   // app.get("/api/answers/:id", function(req, res) {
@@ -20,21 +20,21 @@ module.exports = function(app) {
   //     res.json(dbAnswer);
   //   });
   // });
-  app.get("/api/answers/:name", function(req, res) {
-    db.Answer.findOne({
+  app.get("/api/devs/:id", function(req, res) {
+    db.Devs.findOne({
       where: {
-        name: req.params.name
+        id: req.params.id
       }
     })
-    .then(function(dbAnswer) {
-      res.json(dbAnswer);
+    .then(function(dbDevs) {
+      res.json(dbDevs);
     });
   });
-app.post("/api/answers",function(req,res){
-  db.Answer.create(req.body).then(function(dbAnswer){
-    res.json(dbAnswer);
-  });
-});
+// app.post("/api/answers",function(req,res){
+//   db.Answer.create(req.body).then(function(dbAnswer){
+//     res.json(dbAnswer);
+//   });
+// });
 // app.put("/api/answers", function(req, res) {
 //   db.Answer.update({
 //     answer_numeric0:req.body.answer_numeric0},

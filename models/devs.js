@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes){
-  var Answer = sequelize.define("Answer", {
+  var Devs = sequelize.define("Devs", {
     // id:{
     //   type:DataTypes.INTEGER,
     //   primaryKey:true,
@@ -26,5 +26,5 @@ food: DataTypes.STRING,
     }
   });
 
-  return Answer;
+  return Devs;
 }
